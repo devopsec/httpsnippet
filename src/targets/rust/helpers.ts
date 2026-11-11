@@ -82,3 +82,21 @@ export const literalRepresentation = (
       return `"${value.toString().replace(/"/g, '\\"')}"`;
   }
 };
+
+/**
+ * Render a value as the body of a Rust string literal. Control characters use `\u{..}`
+ * escapes and non-ASCII text is kept as raw UTF-8.
+ */
+export const rustString = (value: string): string =>
+  [...value]
+    .map(c => {
+      if (c === '\\') return '\\\\';
+      if (c === '"') return '\\"';
+      if (c === '\n') return '\\n';
+      if (c === '\r') return '\\r';
+      if (c === '\t') return '\\t';
+      const code = c.codePointAt(0) as number;
+      if (code < 0x20 || code === 0x7f) return `\\u{${code.toString(16)}}`;
+      return c;
+    })
+    .join('');

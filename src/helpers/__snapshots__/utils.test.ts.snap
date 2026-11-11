@@ -19,6 +19,32 @@ Array [
   Object {
     "clients": Array [
       Object {
+        "description": "libcurl easy interface called from C3 (link with -l curl)",
+        "key": "libcurl",
+        "link": "https://curl.se/libcurl/c/",
+        "title": "libcurl",
+      },
+      Object {
+        "description": "Runs the curl CLI with the C3 standard library process API",
+        "key": "curl",
+        "link": "https://c3-lang.org/standard-library/",
+        "title": "curl (std::os::process)",
+      },
+      Object {
+        "description": "Raw HTTP/1.1 over a C3 standard library TCP socket (no TLS)",
+        "key": "tcp",
+        "link": "https://c3-lang.org/standard-library/",
+        "title": "std::net::tcp",
+      },
+    ],
+    "default": "libcurl",
+    "extname": ".c3",
+    "key": "c3",
+    "title": "C3",
+  },
+  Object {
+    "clients": Array [
+      Object {
         "description": "An idiomatic clojure http client wrapping the apache client.",
         "key": "clj_http",
         "link": "https://github.com/dakrone/clj-http",
@@ -350,6 +376,18 @@ Array [
         "link": "https://docs.rs/reqwest/latest/reqwest/",
         "title": "reqwest",
       },
+      Object {
+        "description": "Simple, safe blocking HTTP client for Rust (ureq 3.x)",
+        "key": "ureq",
+        "link": "https://docs.rs/ureq/latest/ureq/",
+        "title": "ureq",
+      },
+      Object {
+        "description": "Lightweight blocking HTTP client for Rust",
+        "key": "attohttpc",
+        "link": "https://docs.rs/attohttpc/latest/attohttpc/",
+        "title": "attohttpc",
+      },
     ],
     "default": "reqwest",
     "extname": ".rs",
@@ -395,6 +433,32 @@ Array [
     "extname": ".swift",
     "key": "swift",
     "title": "Swift",
+  },
+  Object {
+    "clients": Array [
+      Object {
+        "description": "Zig standard library HTTP client, one-call fetch API (Zig 0.17)",
+        "key": "std",
+        "link": "https://ziglang.org/documentation/master/std/#std.http.Client.fetch",
+        "title": "std.http.Client.fetch",
+      },
+      Object {
+        "description": "Zig standard library HTTP client, low-level request API (Zig 0.17)",
+        "key": "request",
+        "link": "https://ziglang.org/documentation/master/std/#std.http.Client.request",
+        "title": "std.http.Client.request",
+      },
+      Object {
+        "description": "libcurl easy interface called from Zig (link with -lc -lcurl)",
+        "key": "libcurl",
+        "link": "https://curl.se/libcurl/c/",
+        "title": "libcurl",
+      },
+    ],
+    "default": "std",
+    "extname": ".zig",
+    "key": "zig",
+    "title": "Zig",
   },
 ]
 `;

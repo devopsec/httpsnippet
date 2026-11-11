@@ -3,6 +3,7 @@ import { Merge } from 'type-fest';
 import { CodeBuilderOptions } from '../helpers/code-builder';
 import { Request } from '../httpsnippet';
 import { c } from './c/target';
+import { c3 } from './c3/target';
 import { clojure } from './clojure/target';
 import { crystal } from './crystal/target';
 import { csharp } from './csharp/target';
@@ -22,6 +23,7 @@ import { ruby } from './ruby/target';
 import { rust } from './rust/target';
 import { shell } from './shell/target';
 import { swift } from './swift/target';
+import { zig } from './zig/target';
 
 export type TargetId = keyof typeof targets;
 
@@ -60,6 +62,7 @@ export interface Target {
 
 export const targets = {
   c,
+  c3,
   clojure,
   crystal,
   csharp,
@@ -79,6 +82,7 @@ export const targets = {
   rust,
   shell,
   swift,
+  zig,
 };
 
 export const isTarget = (target: Target): target is Target => {
